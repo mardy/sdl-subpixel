@@ -118,6 +118,17 @@ int main(int argc, char **argv)
             SDL_RenderDrawLineF(renderer, x, y + 8, x, y + 1);
         }
 
+        /* Render rectangles */
+        SDL_SetRenderDrawColor(renderer, 255, 128, 0, 255);
+        for (int i = 0; i < 40; i++) {
+            SDL_FRect rect = {
+                3 + i * 12 + adj_x,
+                15 + adj_y,
+                10, 10
+            };
+            SDL_RenderDrawRectF(renderer, &rect);
+        }
+
         /* And points at the end of the lines */
         SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
         for (int i = 0; i < 40; i++) {
